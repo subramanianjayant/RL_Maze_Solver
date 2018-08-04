@@ -6,7 +6,7 @@ import Maze_Generator as mazegen
 gamma = 0.5
 ROWS = 15
 COLUMNS = 15
-START_POS = (0,0)
+START_POS = (0,random.randint(0,14))
 
 actions = {"up":[-1,0],"down":[1,0],"left":[0,-1],"right":[0,1]}
 action_signals = {1:'up',2:'down',3:'left',4:'right'}
@@ -44,6 +44,8 @@ for x in range(0,ROWS):
                 policy[x,y]=signal
         if maze[x,y]==5:
             policy[x,y]=np.nan
+        if maze[x,y]==2 or maze[x,y]==1:
+            policy[x,y] = 0
 
 print(maze)
 print(policy)

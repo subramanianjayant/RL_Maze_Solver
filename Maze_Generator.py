@@ -6,7 +6,7 @@ import numpy.random as random
 def generate_maze(rows=10, columns=10, start_pos = (0,0)):
     maze = np.zeros(shape=(rows,columns))
     maze[start_pos] = 1 #starting point
-    maze[rows-1,columns-1] = 2 #goal
+    maze[rows-1,random.randint(0,columns-1)] = 2 #goal
     #put in actual maze generation algorithm later
     for x in range(0,rows,2):
         for y in range(0,columns):
