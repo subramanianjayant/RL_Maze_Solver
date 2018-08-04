@@ -4,15 +4,14 @@ import random
 import Maze_Generator as mazegen
 
 gamma = 0.5
-ROWS = 5
-COLUMNS = 5
-START_POS = (1,0)
+ROWS = 15
+COLUMNS = 15
+START_POS = (0,0)
 
 actions = {"up":[-1,0],"down":[1,0],"left":[0,-1],"right":[0,1]}
 action_signals = {1:'up',2:'down',3:'left',4:'right'}
 maze = mazegen.generate_maze(rows = ROWS, columns = COLUMNS, start_pos = START_POS)
 rewards = mazegen.generate_rewards(maze)
-#policy = mazegen.generate_init_policy(maze)
 
 def transition(state,action): #can add stochastisity later
     next_state = np.array(state)+np.array(actions[action])
@@ -21,7 +20,7 @@ def transition(state,action): #can add stochastisity later
     return tuple(next_state)
 
 values = np.zeros(shape = rewards.shape)
-for iteration in range(0,50):
+for iteration in range(0,500):
     values_prime = values.copy()
     for x in range(0,ROWS):
         for y in range(0,COLUMNS):
@@ -40,7 +39,6 @@ for x in range(0,ROWS):
         pot_value = -100000
         for signal in action_signals:
             val = values[transition([x,y],action_signals[signal])]
-            print(val)
             if val >pot_value:
                 pot_value = val
                 policy[x,y]=signal

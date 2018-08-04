@@ -16,7 +16,7 @@ def generate_maze(rows=10, columns=10, start_pos = (0,0)):
     return maze
 
 def generate_rewards(maze):
-    rewards_dict = {0:-1,1:0,2:10000,5:-10000}
+    rewards_dict = {0:-1,1:-1,2:10000,5:-10000}
     rewards = np.zeros(shape = maze.shape)
     for x in range(0,rewards.shape[0]):
         for y in range(0,rewards.shape[1]):
