@@ -2,6 +2,7 @@ import numpy as np
 import math
 import random
 import Maze_Generator as mazegen
+import MazeGUI
 
 gamma = 0.5
 ROWS = 15
@@ -44,8 +45,9 @@ for x in range(0,ROWS):
                 policy[x,y]=signal
         if maze[x,y]==5:
             policy[x,y]=np.nan
-        if maze[x,y]==2 or maze[x,y]==1:
+        if maze[x,y]==2:
             policy[x,y] = 0
 
 print(maze)
 print(policy)
+MazeGUI.draw_maze(maze)
