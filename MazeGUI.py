@@ -31,6 +31,7 @@ def draw_maze(maze,policy,current_pos):
     show_path(policy,current_pos,draw,image)
     del draw
     image.show()
+    #image.save('maze.jpeg','JPEG')
 
 #shows shortest path from current_pos to end
 def show_path(policy,current_pos,draw,image):
