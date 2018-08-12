@@ -10,7 +10,7 @@ def generate_maze(rows=10, columns=10, start_pos = (0,0)):
     #put in actual maze generation algorithm later
     for x in range(0,rows,2):
         for y in range(0,columns):
-            if random.random()<0.8:
+            if random.random()<0.65:
                 if maze[x,y]!=2 and maze[x,y]!=1:
                     maze[x,y] = 5 #walls
     return maze

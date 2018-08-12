@@ -5,8 +5,8 @@ import Maze_Generator as mazegen
 import MazeGUI
 
 gamma = 0.5
-ROWS = 15
-COLUMNS = 15
+ROWS = 25
+COLUMNS = 25
 START_POS = (0,random.randint(0,14))
 
 actions = {"up":[-1,0],"down":[1,0],"left":[0,-1],"right":[0,1]}
