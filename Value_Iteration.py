@@ -50,4 +50,5 @@ for x in range(0,ROWS):
 
 print(maze)
 print(policy)
-MazeGUI.draw_maze(maze)
+MazeGUI.draw_maze(maze,policy,START_POS)
+#MazeGUI.show_path(policy,START_POS)
