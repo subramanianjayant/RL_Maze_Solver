@@ -46,4 +46,4 @@ The output in the terminal should be the maze and the policy in ndarray format:
  An image of the maze with the shortest path from start to finish should also display 
  with the path highlighed in yellow:
  
- 
+ ![maze](https://user-images.githubusercontent.com/38575750/44005761-cab16b62-9e46-11e8-9f02-a38b3b51dabb.jpeg)
